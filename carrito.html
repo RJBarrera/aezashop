@@ -1,4 +1,13 @@
-
+<?php
+session_start();
+ 
+if(!isset($_SESSION['user_id'])){
+    header('Location: login.php');
+    exit;
+} else {
+    // Show users the page!
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,39 +21,24 @@
 </head>
 <body>
     <header class="header">
-        <a href="index.html">
+        <a href="index.php">
             <span class="header__logo">A E Z A</span>
            <!--<img class="header__logo" src="img/logoo.png" alt="Logotipo">-->
         </a>
     </header>
 
     <nav class="navegacion">
-        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.php">Tienda</a>
         <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
         <a class="navegacion__enlace" href="nosotros.html">Iniciar sesión</a>
     </nav>
 
     <main class="contenedor">
 
-        <form method="post" action="registrobd.php" name="signup-form">
-        <div class="form-element">
-            <label>Usuario</label>
-            <input type="text" name="username" pattern="[a-zA-Z0-9]+" required />
-        </div>
-        <div class="form-element">
-            <label>Correo</label>
-            <input type="email" name="email" required />
-        </div>
-        <div class="form-element">
-            <label>Contraseña</label>
-            <input type="password" name="password" required />
-        </div>
-        <button type="submit" name="register" value="register">Registrarse</button>
-        </form>
     </main>
 
     <footer class="footer">
-        <p class="footer__texto">A E Z A - Todos los derechos Reservados 2022.</p>
+        <p class="footer__texto">Front End Store - Todos los derechos Reservados 2022.</p>
     </footer>
     
 </body>
